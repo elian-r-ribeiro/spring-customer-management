@@ -1,14 +1,11 @@
 package com.ely.customer_microservice.dtos;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public record CreateCustomerDto(
-        @NotBlank(message = "O cnpj é obrigatório.")
+public record UpdateCustomerDto(
         @Size(min = 14, message = "O cnpj deve ter no mínimo 14 caractares.")
         @Size(max = 14, message = "O cnpj dever ter no máximo 14 caracteres.")
         String cnpj,
-        @NotBlank(message = "O nome da empresa é obrigatório")
         String companyName,
         String fantasyName,
         String address
